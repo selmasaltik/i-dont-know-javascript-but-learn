@@ -1,26 +1,28 @@
 # i-dont-know-javascript-but-learn
 About Vanilla JS for Beginners
 
-Script Tags
-Console Output
-Variables
-Data Types
-Strings & String Methods
-Arrays
-Object Literals
-Arrays Of Objects & JSON
-Loops
-High Order Array Methods
-Conditionals
-Functions
-Arrow Functions
-Constructor Functions & Prototypes
-ES6 Classes
-Window Object & DOM
-DOM Selection
-Manipulating The DOM
-Events
-Form Script
+<ul>
+<li>Script Tags</li>
+<li>Console Output</li>
+<li>Variables</li>
+<li>Data Types</li>
+<li>Strings & String Methods</li>
+<li>Arrays</li>
+<li>Object Literals</li>
+<li>Arrays Of Objects & JSON</li>
+<li>Loops</li>
+<li>High Order Array Methods</li>
+<li>Conditionals</li>
+<li>Functions</li>
+<li>Arrow Functions</li>
+<li>Constructor Functions & Prototypes</li>
+<li>ES6 Classes</li>
+<li>Window Object & DOM</li>
+<li>DOM Selection</li>
+<li>Manipulating The DOM</li>
+<li>Events</li>
+<li>Form Script</li>
+<ul>
 
 https://developer.mozilla.org/en-US/
 https://developer.mozilla.org/en-US/docs/Web/API/Console
