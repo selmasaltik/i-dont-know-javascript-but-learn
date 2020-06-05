@@ -24,9 +24,10 @@ About Vanilla JS for Beginners
 <li>Form Script</li>
 </ul>
 
-
-https://developer.mozilla.org/en-US/
-https://developer.mozilla.org/en-US/docs/Web/API/Console
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types
-https://www.w3schools.com/js/js_datatypes.asp
-http://es6-features.org/#Constants
+<ul>
+  <li>https://developer.mozilla.org/en-US/</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/API/Console</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types</li>
+<li>https://www.w3schools.com/js/js_datatypes.asp</li>
+<li>http://es6-features.org/#Constants</li>
+</ul>
