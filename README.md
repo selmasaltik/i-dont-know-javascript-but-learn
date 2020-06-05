@@ -22,7 +22,8 @@ About Vanilla JS for Beginners
 <li>Manipulating The DOM</li>
 <li>Events</li>
 <li>Form Script</li>
-<ul>
+</ul>
+
 
 https://developer.mozilla.org/en-US/
 https://developer.mozilla.org/en-US/docs/Web/API/Console
