@@ -40,4 +40,9 @@ About Vanilla JS for Beginners
 <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for</li>
 <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while</li>
 <li>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals</li>
+<li>https://developer.mozilla.org/en-US/docs/Glossary/Function</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor</li>
+<li>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes</li>
 </ul>

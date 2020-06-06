@@ -415,7 +415,7 @@ const x = 10;
 if(x === 10) {
   console.log('x is 10');
 }
-//Bu ifadede üç eşitlik koyduğumuzda değere ve tipine bakacaktır ve her ikiside numbe olduğu için çıktımızı ekrana yazacaktır
+//Bu ifadede üç eşitlik koyduğumuzda değere ve tipine bakacaktır ve her ikiside number olduğu için çıktımızı ekrana yazacaktır
 
 */
 
@@ -502,3 +502,125 @@ switch(color) {
     break;
 }
 //Output: color is NOT red or blue
+
+// -- FUNCTIONS --
+
+function addNums(num1, num2){
+  console.log(num1 + num2);
+}
+
+addNums(5,4); //Burada bir değer eklemeden fonksiyonu çağırırsak `NaN` dönecektir yani "Not a Number"
+//Output: 9
+
+function addNums(num1 = 1, num2 = 3){
+  console.log(num1 + num2);
+}
+
+addNums(); //Parametrelere ilk değer atayıp varsayılan değerlerle de fonksiyonu çağırabiliriz
+//Output: 4
+
+// Varsayılan değerlerden sonra fonksiyonu çağırırken yeni değerler çağırırsak bunlar default değerlerin üzerine yazacaktır
+
+
+function addNums(num1 = 1, num2 = 3){
+  return num1 + num2; //burada genelde bir şeyler döndürdüğümüz için return ile ifade ederiz
+}
+
+console.log(addNums(5, 5));  // fonksiyonu ise burada console.log() içinde çağırırız
+//Output: 10
+
+// - ARROW FUNCTIONS -
+
+// ES6 ile gelmiştir ve büyük bir kolaylık sağlar fonksiyonları bir değişkene atayıp çağırabilir ve bunu tek satırda yapabiliriz
+// Arrow function ile fonskiyonun üstteki halini karşılaştırırsak daha sade ve okunabilir bir yapıya dönüşüm sağladığımızı görürüz
+const addNums = (num1, num2) => num1 + num2;
+
+console.log(addNums(5, 5));
+//Output: 10
+
+const addNums = num1 => num1 + 7; //tek parametreli fonksiyonlarda parantez kullanmaya bile gerek yoktur
+
+console.log(addNums(5));
+//Output: 12
+
+todos.forEach((todo) => console.log(todo));
+//Bu forEach örneğinde de olduğu gibi işleri bizim için gerçekten kısa ve sade bir hale getirir
+
+// - CONSTRUCTOR FUNCTIONS & PROTOTYPES -
+
+// Constructor function
+function Person(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  //this.dob = dob; ya da
+  this.dob = new Date(dob);
+  this.getBirthYear = function() {
+    return this.dob.getFullYear();
+  }
+  this.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+// Instantiate object
+const person1 = new Person('Jane', 'Doe', '12-29-1990');
+const person2 = new Person('Mary', 'Smith', '05-13-1970'); //Bu şekilde istediğimiz kadar nesne yaratabiliriz
+
+console.log(person1);
+//Output: Person {firstName: "Jane", lastName: "Doe", dob: "12-29-1990"}
+
+console.log(person2.firstName);
+//Output: Mary
+console.log(person2.dob);
+//Output: Wed May 13 1970 00:00:00 GMT+0200 (GMT+03:00)
+console.log(person2.dob.getFullYear());
+//Output: 1970
+
+console.log(person1.getBirthYear());
+//Output: 1990
+console.log(person2.getFullName());
+//Output: Mary Smith
+
+// Prototypes
+function Person(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+}
+
+Person.prototype.getBirthYear = function() {
+  this.getBirthYear = function() {
+    return this.dob.getFullYear();
+  }
+}
+
+Person.prototype.getFullName = function() {
+  this.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+// ES6 Classes
+//Protoypes ile tamamen aynı mantıkla çalışır fakat class kullanarak, bu şekilde daha sade ve okunabilir bir yapı elde ederiz
+class Person {
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+  }
+
+  getBirthYear() {
+    return this.dob.getFullYear();
+  }
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`
+  }
+}
+
+// Instantiate object
+const person1 = new Person('Jane', 'Doe', '12-29-1990');
+const person2 = new Person('Mary', 'Smith', '05-13-1970');
+
+console.log(person1.getFullName());
+//Output: Jane Doe
