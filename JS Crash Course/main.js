@@ -397,3 +397,108 @@ const todoCompleted = todos.filter(function (todo) {
 });
 
 console.log(todoCompleted);
+
+
+// -- CONDITIONALS --
+
+// if...else statements
+const x = 10;
+
+if(x == 10) {
+  console.log('x is 10');
+}
+//Output: x is 10
+
+/*
+const x = 10;
+
+if(x === 10) {
+  console.log('x is 10');
+}
+//Bu ifadede üç eşitlik koyduğumuzda değere ve tipine bakacaktır ve her ikiside numbe olduğu için çıktımızı ekrana yazacaktır
+
+*/
+
+
+/*
+const x = '10';
+
+if(x === 10) {
+  console.log('x is 10');
+}
+//Bu ifadede ise değişkenin tipi string karşılaştırma değeri ise number olduğundan değer ve tip aynı olmayacağı için çıktıyı ekrana yazmayacaktır
+*/
+
+const y = 20;
+
+if(y === 10) {
+  console.log('y is 10');
+}
+else {
+  console.log('y is NOT 10');
+}
+//Output: y is NOT 10
+
+const z = 20;
+
+if(z === 10) {
+  console.log('z is 10');
+}
+else if(z > 10) {
+  console.log('z is greater than 10');
+}
+else {
+  console.log('z is less than 10');
+}
+//Output: z is greater than 10
+
+
+// - Logical operators: AND, OR and NOT -
+// OR: Bu karşılaştırma ifadesinde en azında biri true ise sonuç true, tamamı false ise false ya da tamamı true ise sonuç true olacaktır
+const a = 4;
+const b = 11;
+
+if(a > 5 || b > 10) {
+  console.log('a is more than 5 or b is more than 10');
+}
+//Output: a is more than 5 or b is more than 10
+
+// AND: Bu karşılaştırma ifadesinde en azında biri false ise sonuç false, tamamı false ise false ya da tamamı true ise sonuç true olacaktır
+const a = 6;
+const b = 11;
+
+if(a > 5 && b > 10) {
+  console.log('a is more than 5 or b is more than 10');
+}
+//Output: a is more than 5 or b is more than 10
+
+// - Ternary operator -
+const x = 10;
+
+const color = x > 10 ? 'red' : 'blue';
+
+console.log(color);
+//Output: blue
+
+const x = 11;
+
+const color = x > 10 ? 'red' : 'blue';
+
+console.log(color);
+//Output: red
+
+// switch statement
+const color = 'green';
+
+switch(color) {
+  case 'red':
+    console.log('color is red');
+    break;
+  case 'blue':
+    console.log('color is blue');
+    break;
+  default:
+    console.log('color is NOT red or blue');
+    break;
+}
+//Output: color is NOT red or blue

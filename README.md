@@ -39,4 +39,5 @@ About Vanilla JS for Beginners
 <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration</li>
 <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for</li>
 <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while</li>
+<li>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals</li>
 </ul>
