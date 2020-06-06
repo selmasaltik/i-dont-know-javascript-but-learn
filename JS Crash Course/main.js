@@ -1,3 +1,9 @@
+//COMMENT
+
+/* MULTI
+LINE
+COMMENTS */
+
 
 // -- CONSOLE OUTPUT --
 
@@ -63,16 +69,16 @@ console.log(day);
 
 const year = 2019; //çıktımız bu olacaktır
 // year = 2020; değişkene yeni bir değer atamak istersek bu şekilde hata verecektir çünkü değişken tipimiz const bu yüzden type error mesaj dönecektir.
-//yani yukarıda da dediğimiz sabittitr değiştirilemez veya yeni değer atanamaz.
+//yani yukarıda da dediğimiz gibi sabittir değiştirilemez veya yeni değer atanamaz.
 console.log(year);
 
 //const değişken tipini ne zaman kullanmalıyım?
-//yeniden değer ataycağınızı biliyorsanız const kullanmamaya çalışın.
+//yeniden değer atayacağınızı biliyorsanız const kullanmamaya çalışın.
 //Bir oyunda skor değişebilir ve doğrudan değiştirmek isteyebiliriz
 //Burada yeniden atama yapmasak bile const ile yapamayız.
 //const = score; dersem syntax hatası verecektir bu hata şudur Missing initializer in const declaration
 //Çünkü const kullanırsak bir değer eklemeniz gerekir const score = 10; gibi
-//Ama çoğu zaman direkt olarak değer atayamayabilirsiniz mesela dizi ya da obje içindeki değerlerin tümünüyeniden atayamazsınız bunu ileri anlatımlarda daha iyi anlıyor olacağız.
+//Ama çoğu zaman direkt olarak değer atayamayabilirsiniz mesela dizi ya da obje içindeki değerlerin tümünü yeniden atayamazsınız bunu ileri anlatımlarda daha iyi anlıyor olacağız.
 let = score;
 score = 10;
 
@@ -112,7 +118,7 @@ console.log('My name is ' + name + 'and I am ' + age);
 //Output: My name is Jane and I am 23
 
 
-//ES6 ile gelen ve bunun yerine ise kullandığımız diğer bir yöntem ise;
+//ES6 ile gelen ve bunun yerine kullandığımız diğer bir yöntem ise;
 
 // - TEMPLATE STRING -
 const hello = `My name is  ${name} and I am ${age}`;
@@ -135,7 +141,7 @@ console.log(s.toLowerCase());
 console.log(s.substring(0, 5));
 //Output: Hello
 
-console.log(s.substring(0, 5)).toUpperCase;
+console.log(s.substring(0, 5).toUpperCase());
 //Output: HELLO
 
 console.log(s.split(''));
@@ -145,3 +151,249 @@ const f = 'banana, strawberry, blueberry, watermelon';
 
 console.log(f.split(', ')); //bu şekilde tanımladığımız stringi bir arraye dönüştürmüş olduk. Bu oldukça kullanışlı bir kullanımdır.
 //Output: ["banana", "strawberry", "blueberry", "watermelon"]
+
+// -- ARRAYS --
+
+//Variables that hold multiple values
+// const arr = new Array(); array constuctor
+
+const numbers = new Array(1,2,3,4,5);
+
+console.log(numbers);
+//Output: [1,2,3,4,5];
+
+
+const fruits = ['apples', 'oranges', 'bananas'];
+
+console.log(fruits);
+//Output: ["apples", "oranges", "bananas"]
+
+console.log(fruits[1]);
+//Output: oranges
+
+console.log(fruits[0]);
+//Output: apples
+
+fruits[3] = 'grapes';
+console.log(fruits);
+//Output: ["apples", "oranges", "bananas", "grapes"]
+
+// fruits = []; değişken tipimiz const olduğu için bu şekilde direkt yeni bir atama yapamayız fakat yukarıdaki gibi diziye yeni bir eleman ekleyebiliriz.
+// doğrudan atama yapmak yerine push() ile diziyi manipüle edebilir ve sonuna yeni bir eleman ekleyebiliriz
+
+fruits.push('mangos'); //sona eleman eklemek için
+console.log(fruits);
+//Output: ["apples", "oranges", "bananas", "grapes", "mangos"]
+
+fruits.unshift('strawberries'); //dizinin başına eleman eklemek için
+console.log(fruits);
+//Output: ["strawberries", "apples", "oranges", "bananas", "grapes", "mangos"]
+
+fruits.pop(); //sondan eleman çıkarmak için
+console.log(fruits);
+//Output: ["apples", "oranges", "bananas", "grapes"]
+
+console.log(Array.isArray(fruits)); //bu bir dizi midir kontrolü yapmak için
+//Output: true
+
+console.log(Array.isArray('hello')); //bu bir dizi değildir
+//Output: false
+
+console.log(fruits.indexOf('oranges')); //dizide elemanın ilk görüldüğü indexi verir
+//Output: 2
+
+console.log(fruits.indexOf('pears')); //dizide olmayan bir eleman ise -1 değeri dönecektir
+//Output: -1
+
+// -- OBJECT LITERALS --
+
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 33,
+  hobbies: ['music', 'movies', 'sports'],
+  address: {
+    street: '50 Main St',
+    city: 'Boston',
+    state: 'MA'
+  }
+}
+
+console.log(person);
+//Output: {firstName: "John", lastName: "Doe", age: 33, hobbies: Array(3), address: {…}}
+
+// alert(person); yazdığımızda çıktı [object Object] olacaktır alert bu tür şeyler yapmak için iyi bir yol değildir
+
+console.log(person.firstName); //Belirli tek bir değere ulaşmak için yazılması gereken söz dizimi
+//Output: John
+
+console.log(person.firstName, person.lastName);
+//Output: John Doe
+
+console.log(person.hobbies[1]); //nesne içindeki diziden indexi 1 olan elemanı getirmek için
+//Output: movies
+
+console.log(person.address.city); //nesne içinden bir nesne elemanını getirmek için
+//Output: Boston
+
+// - OBJECT DESTRUCTURING -
+const { firstName, lastName, address : {city}} = person;
+
+console.log(firstName);
+//Output: John
+
+console.log(city);
+//Output: Boston
+
+person.email = 'john@gmail.com';
+
+console.log(person.email);
+//Output: john@gmail.com
+
+// console.log(person); dediğimizde emailin person nesnesine eklendiğini görürüz.
+
+const todos = [
+  {
+    id: 1,
+    text: 'Take out trash',
+    isCompleted: true
+  },
+  {
+    id: 2,
+    text: 'Meeting with boss',
+    isCompleted: true
+  },
+  {
+    id: 3,
+    text: 'Dentist appt',
+    isCompleted: false
+  }
+];
+
+console.log(todos); //tüm elemanları nesne olan bir dizi gelecektir
+
+console.log(todos[1].text);
+//Output: Meeting with boss
+
+// -- JSON --
+// (JavaScript Object Notation)
+// JSON Formatter --> https://www.freeformatter.com/json-formatter.html
+
+//Formatted JSON
+/*
+[
+  {
+    "id": 1,
+    "text": "Take out trash",
+    "isCompleted": true
+  },
+  {
+    "id": 2,
+    "text": "Meeting with boss",
+    "isCompleted": true
+  },
+  {
+    "id": 3,
+    "text": "Dentist appt",
+    "isCompleted": false
+  }
+]
+*/
+
+/*
+A common use of JSON is to exchange data to/from a web server.
+When sending data to a web server, the data has to be a string.
+Convert a JavaScript object into a string with JSON.stringify().
+
+Source: https://www.w3schools.com/js/js_json_stringify.asp
+*/
+
+const todoJSON = JSON.stringify(todos); //bir diziden JSON formatında dize oluşturmak için
+console.log(todoJSON);
+//Output: [{"id":1,"text":"Take out trash","isCompleted":true},{"id":2,"text":"Meeting with boss","isCompleted":true},{"id":3,"text":"Dentist appt","isCompleted":false}]
+
+// -- LOOPS --
+
+// - FOR -
+
+for(let i = 0; i < 10; i++) {
+  //console.log(i); ya da
+  console.log(`For Loop Number: ${i}`); //template string kullanarak
+}
+
+/* Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+*/
+
+// - WHILE -
+
+let i = 0;
+while(i < 10) {
+  console.log(`While Loop Number: ${i}`);
+  i++;
+}
+
+//for döngüsü
+for(let i = 0; i < todos.length; i++) {
+  console.log(todos[i].text);
+}
+/* Output:
+Take out trash
+Meeting with boss
+Dentist appt
+*/
+
+//for of döngü kurarken daha okunabilir ve basit bir yapısı var for a göre
+for (let todo of todos) {
+  console.log(todo.id);
+}
+/* Output:
+1
+2
+3
+*/
+
+// - forEach, map, filter -
+
+//forEach ile her bir text için diziye girdi ve textleri çağırdık
+todos.forEach(function (todo) {
+  console.log(todo.text);
+});
+/* Output:
+Take out trash
+Meeting with boss
+Dentist appt
+*/
+
+//map bize bir dizi döndürür, sadece textin bir dizisini istediğimiz için bir değişkene atadık ve bunu çağırdık
+const todoText = todos.map(function (todo) {
+  return todoText;
+});
+
+console.log(todoText);
+// Output: ["Take out trash", "Meeting with boss", "Dentist appt"]
+
+//filter ile tamamlananları filtreledik çıktı olarak bize 2 tane dizi değerlerini getirecektir
+const todoCompleted = todos.filter(function (todo) {
+  return todoCompleted === true;
+});
+
+console.log(todoCompleted);
+
+//bu şekilde filter ve map birlikte kullanıldığında tamamlanmış olanların textlerini bir dizi olarak getirecektir
+const todoCompleted = todos.filter(function (todo) {
+  return todoCompleted === true;
+}).map(function (todo) {
+  return todo.text;
+});
+
+console.log(todoCompleted);

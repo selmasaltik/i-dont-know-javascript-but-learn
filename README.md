@@ -27,3 +27,12 @@ https://developer.mozilla.org/en-US/docs/Web/API/Console
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types
 https://www.w3schools.com/js/js_datatypes.asp
 http://es6-features.org/#Constants
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+https://developer.mozilla.org/tr/docs/Web/JavaScript/Reference/Global_Objects/Object
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects
+https://www.json.org/json-en.html
+https://www.freeformatter.com/json-formatter.html
+https://www.w3schools.com/js/js_json_stringify.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while
