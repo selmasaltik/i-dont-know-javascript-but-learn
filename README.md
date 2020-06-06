@@ -45,4 +45,9 @@ About Vanilla JS for Beginners
 <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</li>
 <li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor</li>
 <li>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes</li>
+<li>https://www.w3schools.com/jsref/obj_window.asp</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/API/Element</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model</li>
+<li>https://developer.mozilla.org/en-US/docs/Web/Events</li>
 </ul>

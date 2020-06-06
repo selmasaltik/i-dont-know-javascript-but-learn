@@ -454,7 +454,7 @@ else {
 
 
 // - Logical operators: AND, OR and NOT -
-// OR: Bu karşılaştırma ifadesinde en azında biri true ise sonuç true, tamamı false ise false ya da tamamı true ise sonuç true olacaktır
+// OR: Bu karşılaştırma ifadesinde en azından biri true ise sonuç true, tamamı false ise false ya da tamamı true ise sonuç true olacaktır
 const a = 4;
 const b = 11;
 
@@ -463,7 +463,7 @@ if(a > 5 || b > 10) {
 }
 //Output: a is more than 5 or b is more than 10
 
-// AND: Bu karşılaştırma ifadesinde en azında biri false ise sonuç false, tamamı false ise false ya da tamamı true ise sonuç true olacaktır
+// AND: Bu karşılaştırma ifadesinde en azından biri false ise sonuç false, tamamı false ise false ya da tamamı true ise sonuç true olacaktır
 const a = 6;
 const b = 11;
 
@@ -546,6 +546,8 @@ console.log(addNums(5));
 todos.forEach((todo) => console.log(todo));
 //Bu forEach örneğinde de olduğu gibi işleri bizim için gerçekten kısa ve sade bir hale getirir
 
+// -- OOP --
+
 // - CONSTRUCTOR FUNCTIONS & PROTOTYPES -
 
 // Constructor function
@@ -624,3 +626,132 @@ const person2 = new Person('Mary', 'Smith', '05-13-1970');
 
 console.log(person1.getFullName());
 //Output: Jane Doe
+
+// -- ELEMENT SELECTORS --
+
+// Single element
+
+// const form = document.getElementById('my-form');
+// console.log(form);
+//Output:  <form id="my-form">…</form> ya da
+
+console.log(document.getElementById('my-form')); //bir elementi id ile getirdik
+
+console.log(document.querySelector('.container')); //classına göre bir elementi sorgulayarak getirdik
+//Output: <section class="container">…</section>
+
+console.log(document.querySelector('h1')); //tek bir eleman sorgulamak içindir ve daha fazla h1 olsa bile ilkini getirir
+//Output:  <h1>JS For Beginners</h1>
+
+// Multiple element
+
+console.log(document.querySelectorAll('.item')); //item classına sahip tüm elementleri sorguladık ve getirdik, bu çoklu sorgu yapmamızı sağlar
+//Output: NodeList(3) [li.item, li.item, li.item]
+//burada bize dizi özellikleriyle bir liste döndürür
+
+console.log(document.getElementsByClassName('item')); //item classına sahip elemnetleri getirir direkt class sorgusu yaptığımız için üstteki sorgudaki gibi .item yazmamıza gerek yoktur
+//Output: HTMLCollection(3) [li.item, li.item, li.item]
+//burada üsttekinden farklı olarak direkt dizi özellikli bir liste gelmez bunun için dizi dönüşümü yapmamız gerekir
+
+console.log(document.getElementsByTagName('li'));
+//Output: HTMLCollection(3) [li.item, li.item, li.item]
+
+// **Biz ağırlıklı olarak querySelector() ve querySelectorAll() kullanacağız artık diğerlerini genelde kullanmıyoruz
+
+const items = document.querySelectorAll('.item');
+
+items.forEach((item) => console.log(item));
+/* Output:
+<li class="item">Item 1</li>
+<li class="item">Item 2</li>
+<li class="item">Item 3</li>
+*/
+
+// -- MANIPULATING THE DOM --
+
+const ul = document.querySelector('.items');
+
+ul.remove(); //dediğimizde items classına ait ul elementini kaldıracaktır
+ul.lastElementChild.remove(); //dediğimizde items classına ait ul elementinin son child elementini kaldıracaktır
+ul.firstElementChild.textContent = 'Hello'; //items classına ait ul elementinin ilk child elementinin texti "Hello" olacaktır
+ul.children[1].innerText = 'Brad'; //yine text içeriğini değiştirmek için bunu kullanabiliriz
+ul.lastElementChild.innerHTML = '<h4>Hello</h4>'; //metin içeriğini değiştirirken bu şekilde tag de kullanabiliriz ve dinamik olarak HTMLi değiştirebilirsiniz
+
+const btn = document.querySelector('.btn');
+btn.style.background = 'red'; //bu şekilde elementlere ait stilleri değiştirebiliriz
+//bu neden gerekli olabilir derseniz event ve fonksiyonlarınız olabilir ve bunu dinamik olarak yapabilirsiniz
+//böylece bir şeye tıklayabilir ve başka bir renk almasını sağlayabilirsiniz
+//bunu boyut değiştirmek ya da farklı stil özellikleri için yapabilirsiniz
+
+// -- EVENTS --
+
+// Mouse Event
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', e => {
+  e.preventDefault(); //bunu eklemezsek butona tıkladığımızda console da 'click' yanıp sönecektir
+  console.log('click');
+  //console.log(e.target); yazarsak Output:  <input class="btn" type="submit" value="Submit"> olacaktır
+});
+//Output: click olarak console da yazacaktır
+
+btn.addEventListener('click', e => { // 'click' gibi, 'mouseover' ve 'mouseout' event gibi farklı eventleri de kullanabiliriz
+  e.preventDefault();
+  console.log(e.target.className); //Output: btn
+  document.getElementById('my-form').style.background = '#ccc'; //id ye göre formun arkaplan rengini değiştirdik
+  document.querySelector('body').classList.add('bg-dark'); //body e bg-dark classını ekledik ve butona tıklandığında daha koyu bir arkaplan ve beyaz text elde ederiz
+  //bunu  kullanıcı arayüzünü interaktif hale getirme açısından yapabilirsiniz
+  document.querySelector('.items').lastElementChild.innerHTML = '<h1>Changed</h1>';
+});
+
+// Keyboard Event
+const nameInput = document.querySelector('#name');
+nameInput.addEventListener('input', e => {
+  document.querySelector('.container').append(nameInput.value);
+});
+
+// -- USER FORM SCRIPT --
+
+// Put DOM elements into variables
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userList = document.querySelector('#users');
+
+// Listen for form submit
+myForm.addEventListener('submit', onSubmit);
+
+function onSubmit(e) {
+  e.preventDefault();
+
+  //console.log(nameInput.value); Name input alanına yazdığımız değeri getirir
+
+  if(nameInput.value === '' || emailInput.value === '') { //input anlanları boşsa formu göndermek istersek uyarı gelmesi için bir koşul ekledik
+    // alert('Please enter all fields');
+    msg.classList.add('error'); //uyarı mesajı stili için error classı ekledik
+    msg.innerHTML = 'Please enter all fields'; // text ekledik
+
+    // Remove error after 3 seconds
+    setTimeout(() => msg.remove(), 3000);
+  } else {
+    //console.log('Success);
+
+    // Create new list item with user
+    const li = document.createElement('li');
+
+    // Add text node with input values
+    li.appendChild(document.createTextNode(`${nameInput.value}: ${emailInput.value}`));
+
+    // Add HTML
+    // li.innerHTML = `<strong>${nameInput.value}</strong>e: ${emailInput.value}`;
+
+    // Append to ul
+    userList.appendChild(li);
+
+    // Clear fields
+    nameInput.value = '';
+    emailInput.value = '';
+  }
+}
+
